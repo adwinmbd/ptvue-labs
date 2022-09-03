@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTunes search</title>
+    <link href="./assets/site.css" rel="stylesheet">
+    <script src="./assets/ptv-041.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Itunes Search</h1>
+    </header>
+
+    <main>
+        <section id="searchbox" v-scope="SearchBox()"></section>
+        <section id="resultsbox" v-scope="Results()"></section>
+    </main>
+
+    <template id="search">
+        <form @submit.prevent="search">
+            <input type="text" v-model="store.term" placeholder="search for an artist" />
+        </form>
+    </template>
+
+    <template id="results">
+        <h3>{{ store.msg }}</h3>
+        <ul v-if="store.results.length > 0">
+            <li v-for="album in store.results" :key="album.collectionId">
+                <img :src="album.artworkUrl100" alt="album cover" />
+                <div>
+                    <h4>{{ shorten(album.collectionName, 21) }}</h4>
+                    <p>{{ shorten(album.artistName, 21) }}</p>
+                </div>
+            </li>
+        </ul>
+    </template>
+
+    <script src="./assets/index.js"></script>
+</body>
+
+</html>
