@@ -34,3 +34,6 @@ npm run build
 ```
 npm run clean
 ```
+
+## Credits
+* [Noel Tekiri (sicontis)](https://codesandbox.io/u/sicontis)

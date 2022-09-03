@@ -34,3 +34,7 @@ npm run build
 ```
 npm run clean
 ```
+
+## Credits
+* [Tedir Ghazali](https://codepen.io/tedirghazali/pen/oNWrPro)
+* [Otto Piispanen](https://github.com/opiispanen/petitevue-picoss-todos-example)
