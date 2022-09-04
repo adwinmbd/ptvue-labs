@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petite Vue Form</title>
+    <link href="./assets/site.css" rel="stylesheet">
+    <script src="./assets/ptv-041.js"></script>
+</head>
+
+<body>
+    <form v-scope="ContactForm()" @submit.prevent="submitForm">
+        <input name="name" type="text" class="feedback-input" placeholder="Name" v-model="formData.name" required />
+        <input name="email" type="text" class="feedback-input" placeholder="Email" v-model="formData.email" required />
+        <textarea name="text" class="feedback-input" placeholder="Comment" v-model="formData.message" required>
+        </textarea>
+        <button :disabled="formLoading" class="button">{{ buttonText }}</button>
+        <div>{{ formMessage }}</div>
+    </form>
+
+    <script src="./assets/index.js"></script>
+</body>
+
+</html>
