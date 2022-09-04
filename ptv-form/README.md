@@ -37,4 +37,4 @@ npm run clean
 
 ## Credits
 * [Bjorn Krols](https://technotrampoline.com/articles/building-an-ajax-form-with-petite-vue)
-* [Zach Saucier](https://codepen.io/ZachSaucier/pens/public)
+* [Zach Saucier](https://codepen.io/ZachSaucier/pen/jOwNvO)
