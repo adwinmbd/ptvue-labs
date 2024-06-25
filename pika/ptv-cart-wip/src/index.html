@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTV-CART</title>
+    <link href="./assets/site.css" rel="stylesheet">
+    <!--<<script src="https://unpkg.com/pico-vue" defer init></script>-->
+    <script src="./assets/ptv.js" defer></script>
+    <!--<script src="./assets/pico-vue.js" defer init></script>-->
+    <!--<script src="https://unpkg.com/petite-vue" defer init></script>-->
+</head>
+
+<body id="app" :class="{ 'dark': dark }" v-cloak @vue:mounted="onMounted">
+    <div class="added" v-show="isAdded">
+        Product added!
+    </div>
+    <header class="main">
+        <div class="dropdown">
+            <button class="lk" @click="toggle">
+                Cart
+                <span v-show="!isCartEmpty">{{CartSize}}</span>
+            </button>
+            <ul v-if="toggled">
+                <template v-for="product in cart">
+                    <li>
+                        <span v-text="product.qty"></span>x
+                        <span v-text="product.name"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <button class="lk" @click="toggleDark" v-text="dark ? 'Light' : 'Dark'"></button>
+    </header>
+    <main>
+        <section class="product">
+            <div class="cover" style="background-image: url('./assets/img/01.jpeg');">
+            </div>
+            <h1>
+                Amazing T-Shirt
+                <span class="price">$19</span>
+            </h1>
+            <h6>Color Options</h6>
+            <ul class="colors">
+                <li>
+                    <button class="red" @click="changeColor('red')" :class="{sel: color === 'red'}"></button>
+                </li>
+                <li>
+                    <button class="purple" @click="changeColor('purple')" :class="{sel: color === 'purple'}"></button>
+                </li>
+                <li>
+                    <button class="green" @click="changeColor('green')" :class="{sel: color === 'green'}"></button>
+                </li>
+            </ul>
+
+            <footer>
+                <input v-model="qty" />
+                <button class="add" @click="changeColor('green')"></button>
+            </footer>
+        </section>
+
+        <section class="related">
+            <h3>Related</h3>
+            <article>
+                <div class="cover" style="background-image: url('./assets/img/02.jpeg');"
+                    @click.once="addProduct('Jeans')">
+                </div>
+            </article>
+            <article>
+                <div class="cover" style="background-image: url('./assets/img/03.jpeg');"
+                    @click.once="addProduct('Jeans')">
+                </div>
+            </article>
+            <article>
+                <div class="cover" style="background-image: url('./assets/img/04.jpeg');"
+                    @click.once="addProduct('Jeans')">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!--
+    <div id="app" @vue:mounted="init()">
+        {{ count }}
+        <button @click="count++">inc</button>
+    </div>
+    -->
+
+
+    <script src="./assets/index.js" type="module"></script>
+</body>
+
+</html>

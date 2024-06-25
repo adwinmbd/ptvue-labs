@@ -1,0 +1,14 @@
+{
+  "name": "PTV-CART",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build",
+    "clean": "rimraf .parcel-cache dist"
+
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "rimraf": "^5.0.7"
+  }
+}
