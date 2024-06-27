@@ -38,5 +38,5 @@ npm run clean
 ## Credits
 - [Winston Fassett](https://github.com/WinstonFassett/nanostores-daisyui-vanilla-multiflow-checkout)
 - [Rushied](https://github.com/ws-rush/pico-vue)
-- [Awesome Petite](https://github.com/vuejs/petite-vue)
+- [Awesome Club](https://github.com/awesome-club/awesome-petite-vue)
 
